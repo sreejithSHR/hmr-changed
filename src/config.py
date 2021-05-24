@@ -212,9 +212,9 @@ def prepare_dirs(config, prefix=['HMR']):
         time_str = datetime.now().strftime("%b%d_%H%M")
 
         save_name = "%s_%s_%s" % (prefix, postfix, time_str)
-        config.model_dir = osp.join(config.log_dir, save_name)
+        config.model_dir = osp.join(config.logging_dir, save_name)
 
-    for path in [config.log_dir, config.model_dir]:
+    for path in [config.logging_dir, config.model_dir]:
         if not osp.exists(path):
             print('making %s' % path)
             makedirs(path)
